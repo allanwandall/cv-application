@@ -1,0 +1,42 @@
+.input-container {
+    width: 50%;
+    background-color: white;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+    margin: 15px;
+    padding: 20px;
+}
+
+.input-container h1 {
+    margin: 0;
+    margin-bottom: 15px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 3px;
+}
+
+.personal-info-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,  minmax(300px, 1fr) );
+    grid-auto-rows: 30px;
+    gap: 15px;
+    overflow: auto;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+}
+
+input, textarea {
+    flex: 1;
+    min-width: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+
+.personal-info-form textarea {
+    flex: 1;
+    grid-column: 1/-1;
+    resize: none;
+    grid-row: span 2;
+}

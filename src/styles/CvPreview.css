@@ -1,0 +1,90 @@
+.cv-container {
+    margin: 15px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.cv-preview {
+    flex: 1;
+    background-color: white;
+    aspect-ratio: 0.70711356243;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cv-header {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+    width: 100%;
+    height: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cv-header-name {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.cv-header-name h2 {
+    font-weight: 300;
+    font-size: 0.4em;
+    margin: 0;
+    letter-spacing: 0.2em;
+    position: relative;
+}
+
+.cv-header-name h2:nth-child(1) {
+    bottom: -0.45em;
+}
+
+.cv-header-name h2:nth-child(3) {
+    top: -0.45em;
+    right: 0.4em;
+    text-align: end;
+    font-size: 0.25em;
+}
+
+.cv-header-name h1{
+    padding: 0;
+    margin: 0;
+    font-size: 0.8em;
+    letter-spacing: 0.2em;
+}
+
+.cv-middle {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.cv-left {
+    background-color: aqua;
+    flex: 0.45;
+    margin: 15px;
+}
+
+.cv-right {
+    background-color: coral;
+    flex: 1;
+    margin: 15px;
+}
+
+.cv-middle-line {
+    background-color: rgb(119, 119, 119);
+    min-width: 1px;
+    height: 85%;
+    margin-top: 5%;
+}

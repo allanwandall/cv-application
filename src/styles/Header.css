@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap');
+
+.header-container {
+    background-color: var(--auburn);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-direction: row;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+}
+
+.header-container h1 {
+    font-family: 'Asul', sans-serif;
+    font-size: 60px;
+    margin: 0;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo-container p {
+    position: relative;
+    top: -5px;
+    font-size: 7px;
+    margin: 0;
+}
+
+.logo-container img {
+    width: 80px;
+}
