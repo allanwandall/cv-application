@@ -18,7 +18,13 @@ class App extends Component {
       address: '',
       phone: '',
       email: '',
-      description: ''
+      linkedin: '',
+      github: '',
+      description: '',
+      image: null,
+      experience: {},
+      experiences: [],
+
     }
 
     this.onDragStart = this.onDragStart.bind(this);
@@ -30,7 +36,11 @@ class App extends Component {
     this.handleAddressChange = this.handleAddressChange.bind(this);
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handleLinkedinChange = this.handleLinkedinChange.bind(this);
+    this.handleGithubChange = this.handleGithubChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+    this.handleImageUpload = this.handleImageUpload.bind(this);
+    this.handleExperienceSubmit = this.handleExperienceSubmit.bind(this);
   }
 
   onDragStart(event) {
@@ -79,9 +89,26 @@ class App extends Component {
     this.setState({email: event.target.value});
   }
 
+  handleLinkedinChange(event) {
+    this.setState({linkedin: event.target.value});
+  }
+
+  handleGithubChange(event) {
+    this.setState({github: event.target.value})
+  }
+
   handleDescriptionChange(event) {
     this.setState({description: event.target.value});
   }
+
+  handleImageUpload(event) {
+    console.log(event.target.files[0]);
+    this.setState({image: event.target.files[0]})
+  }
+
+  handleExperienceSubmit = data => {
+    this.setState({ experience: data });
+  };
   
 
   render() {
@@ -100,7 +127,11 @@ class App extends Component {
             address={this.handleAddressChange}
             phone={this.handlePhoneChange}
             email={this.handleEmailChange}
+            linkedin={this.handleLinkedinChange}
+            github={this.handleGithubChange}
             description={this.handleDescriptionChange}
+            image={this.handleImageUpload}
+            onFormSubmit={this.handleExperienceSubmit}
             />
           <div className='drag-line'>
             <div className='circle'
@@ -116,7 +147,11 @@ class App extends Component {
             address={this.state.address}
             phone={this.state.phone}
             email={this.state.email}
+            linkedin={this.state.linkedin}
+            github={this.state.github}
             description={this.state.description}
+            image={this.state.image}
+            experiences={this.state.experience}
             />
         </div>
         <Footer />

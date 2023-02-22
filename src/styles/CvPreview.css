@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 .cv-container {
     margin: 15px;
     width: 50%;
@@ -24,7 +26,8 @@
     width: 100%;
     height: 16%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
 
 }
@@ -61,6 +64,21 @@
     letter-spacing: 0.2em;
 }
 
+/* .profile-picture-container {
+    overflow: hidden;
+    aspect-ratio: 1;
+    object-fit: cover;
+} */
+
+#profile-picture {
+    width: 2em;
+    position: relative;
+    top: 0.3em;
+    object-fit: cover;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
 .cv-middle {
     flex: 1;
     width: 100%;
@@ -68,23 +86,78 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: start;
+    font-family: 'Roboto', 'Times New Roman', Times, serif;
+}
+
+p {
+    font-size: 0.2em;
+    margin: 0;
+    line-height: 160%;
 }
 
 .cv-left {
-    background-color: aqua;
-    flex: 0.45;
-    margin: 15px;
+    width: 2.8em;
+    margin: 0.3em 0.4em 0.3em 0.5em;
 }
 
 .cv-right {
-    background-color: coral;
     flex: 1;
-    margin: 15px;
+    margin: 0.3em 0.5em 0.3em 0.4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.cv-middle-line {
+.cv-middle h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.3em;
+    font-weight: 500;
+    margin: 0 0 0.4em;
+    letter-spacing: 0.17em;
+}
+
+.vertical-line {
     background-color: rgb(119, 119, 119);
     min-width: 1px;
     height: 85%;
     margin-top: 5%;
+}
+
+.horizontal-line {
+    background-color: rgb(119, 119, 119);
+    min-height: 1px;
+    width: 85%;
+    margin-left: 5%;
+    margin-top: 0.35em;
+    margin-bottom: 0.35em;
+}
+
+.personal-container {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+.personal-container li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.15em;
+    margin: 0;
+    padding: 0;
+}
+
+.personal-container li p{
+    margin: 0;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+.personal-container img {
+    width: 0.35em;
 }

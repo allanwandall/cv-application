@@ -5,6 +5,8 @@
     box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
     margin: 15px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .input-container h1 {
@@ -14,13 +16,12 @@
     letter-spacing: 3px;
 }
 
-.personal-info-form {
+form {
     display: grid;
-    grid-template-columns: repeat(auto-fill,  minmax(300px, 1fr) );
+    grid-template-columns: repeat(auto-fill,  minmax(200px, 1fr) );
     grid-auto-rows: 30px;
     gap: 15px;
-    overflow: auto;
-    height: 100%;
+    margin-bottom: 15px;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
 }
@@ -38,5 +39,61 @@ input, textarea {
     flex: 1;
     grid-column: 1/-1;
     resize: none;
+    grid-row: span 3;
+}
+
+#image-input {
+    grid-column: 1/-1;
+    visibility: hidden;
+}
+
+form label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7px;
+}
+
+form label input {
+    flex: 1;
+    height: 100%;
+}
+
+.experience-form textarea {
+    flex: 1;
+    grid-column: 1/-1;
+    resize: none;
     grid-row: span 2;
+}
+
+button {
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#image-label {
+    height: 100%;
+    padding-left: 10px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.add-button {
+    border: none;
+    height: 30px;
+}
+
+#image-label, .add-button {
+    background-color: var(--cardinal);
+    border-radius: 8px;
+    color: white;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+#image-label:hover, .add-button:hover {
+    background-color: white;
+    border: 1px solid var(--cardinal);
+    color: var(--cardinal);
 }
