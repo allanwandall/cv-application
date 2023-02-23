@@ -64,12 +64,6 @@
     letter-spacing: 0.2em;
 }
 
-/* .profile-picture-container {
-    overflow: hidden;
-    aspect-ratio: 1;
-    object-fit: cover;
-} */
-
 #profile-picture {
     width: 2em;
     position: relative;
@@ -112,7 +106,7 @@ p {
 .cv-middle h2 {
     font-family: 'Raleway', sans-serif;
     font-size: 0.3em;
-    font-weight: 500;
+    font-weight: 600;
     margin: 0 0 0.4em;
     letter-spacing: 0.17em;
 }
@@ -160,4 +154,9 @@ p {
 
 .personal-container img {
     width: 0.35em;
+}
+
+.cv-right h3{
+    font-size: 0.22em;
+    font-weight: 300;
 }

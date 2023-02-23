@@ -42,8 +42,11 @@ input, textarea {
     grid-row: span 3;
 }
 
-#image-input {
+#image-label {
     grid-column: 1/-1;
+}
+
+#image-input {
     visibility: hidden;
 }
 

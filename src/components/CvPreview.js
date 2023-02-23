@@ -44,7 +44,8 @@ export default class CvPreview extends Component {
                             <p>{this.props.description}</p>
                             <div className="horizontal-line" />
                             <h2>EXPERIENCE</h2>
-                            <h3>{this.props.experiences.title}</h3>
+                            <h3>{`${this.props.experiences.title} | ${this.props.experiences.employer} | ${this.props.experiences.start} - ${this.props.experiences.finish}`}</h3>
+                            <p>{this.props.experiences.description}</p>
                         </div>
                         
                     </div>

@@ -10,6 +10,7 @@ export default class InputContainer extends Component {
             employer: '',
             start: '',
             finish: '',
+            description: ''
         };
     }
 
@@ -24,9 +25,9 @@ export default class InputContainer extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        const { title, employer, start, finish } = this.state;
+        const { title, employer, start, finish, description } = this.state;
 
-        this.props.onFormSubmit({ title, employer, start, finish });
+        this.props.onFormSubmit({ title, employer, start, finish, description });
     };
 
     render() {
@@ -60,7 +61,7 @@ export default class InputContainer extends Component {
                         Finish date:
                         <input type="date" name="finish" value={this.state.finish} onChange={this.handleInputChange} />
                     </label>
-                    <textarea placeholder="Describe your experience" value={this.state.description} onChange={this.handleInputChange} />
+                    <textarea placeholder="Describe your experience" name="description" value={this.state.description} onChange={this.handleInputChange} />
 
                     <button type="submit">Submit</button>
                 </form>
