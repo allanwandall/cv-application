@@ -5,7 +5,7 @@
     width: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     color: black;
 }
 
@@ -123,6 +123,9 @@ p {
     min-height: 1px;
     width: 85%;
     margin-left: 5%;
+}
+
+.cv-container .horizontal-line {
     margin-top: 0.35em;
     margin-bottom: 0.35em;
 }
@@ -159,4 +162,9 @@ p {
 .cv-right h3{
     font-size: 0.22em;
     font-weight: 300;
+    margin: 0.3em 0 0.5em;
+}
+
+.experience {
+    margin-bottom: 0.15em;
 }

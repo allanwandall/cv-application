@@ -70,9 +70,17 @@ form label input {
     grid-row: span 2;
 }
 
-button {
+.input-container .horizontal-line {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button, #image-label {
     font-size: 17px;
     cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
 }
 
 #image-label {
@@ -89,10 +97,7 @@ button {
 
 #image-label, .add-button {
     background-color: var(--cardinal);
-    border-radius: 8px;
     color: white;
-    transition: all 0.3s ease;
-    font-family: 'Roboto', sans-serif;
 }
 
 #image-label:hover, .add-button:hover {
@@ -100,3 +105,29 @@ button {
     border: 1px solid var(--cardinal);
     color: var(--cardinal);
 }
+
+.remove-button {
+    grid-column: -2/-1;
+    background-color: rgb(100, 100, 100);
+    color: white;
+    border: none;
+}
+
+.remove-button:hover {
+    background-color: rgb(233, 233, 233);
+    color: black;
+    border: 1px solid black;
+}
+
+.submit-button {
+    background-color: var(--yellowgreen);
+    color: white;
+    border: none;
+}
+
+.submit-button:hover {
+    background-color: white;
+    color: var(--yellowgreen);
+    border: 1px solid var(--yellowgreen);
+}
+

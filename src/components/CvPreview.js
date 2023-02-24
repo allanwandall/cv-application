@@ -5,6 +5,7 @@ import phoneIcon from "../assets/phone.svg";
 import emailIcon from "../assets/email-outline.svg";
 import linkedinIcon from "../assets/linkedin.svg";
 import githubIcon from "../assets/GitHub-icon.png";
+import Experience from "./Experience";
 
 export default class CvPreview extends Component {
     constructor(props) {
@@ -44,8 +45,16 @@ export default class CvPreview extends Component {
                             <p>{this.props.description}</p>
                             <div className="horizontal-line" />
                             <h2>EXPERIENCE</h2>
-                            <h3>{`${this.props.experiences.title} | ${this.props.experiences.employer} | ${this.props.experiences.start} - ${this.props.experiences.finish}`}</h3>
-                            <p>{this.props.experiences.description}</p>
+                            {this.props.experiences.map((experience, i) => {
+                                if (experience !== null) {
+                                    return <Experience
+                                                key={i}
+                                                experience={experience}
+                                            />
+                                } else {
+                                    return <p key={i}>Add information and submit to preview</p>
+                                }
+                            })}
                         </div>
                         
                     </div>

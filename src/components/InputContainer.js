@@ -1,34 +1,15 @@
 import React, { Component } from "react";
 import '../styles/InputContainer.css';
+import ExperienceInput from "./ExperienceInput";
 
 export default class InputContainer extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            title: '',
-            employer: '',
-            start: '',
-            finish: '',
-            description: ''
-        };
+        
     }
 
-    handleInputChange = event => {
-        const { name, value } = event.target;
-
-        this.setState({
-            [name]: value
-        });
-    };
-
-    handleSubmit = event => {
-        event.preventDefault();
-
-        const { title, employer, start, finish, description } = this.state;
-
-        this.props.onFormSubmit({ title, employer, start, finish, description });
-    };
+    
 
     render() {
         return (
@@ -50,22 +31,16 @@ export default class InputContainer extends Component {
                     </label>
                 </form>
                 <h1>EXPERIENCE</h1>
-                <form className="experience-form" onSubmit={this.handleSubmit}>
-                    <input type="text" name="title" placeholder="Job Title" value={this.state.title} onChange={this.handleInputChange} />
-                    <input type="text" name="employer" placeholder="Employer" value={this.state.employer} onChange={this.handleInputChange} />
-                    <label>
-                        Start date:
-                        <input type="date" name="start" value={this.state.start} onChange={this.handleInputChange} />
-                    </label>
-                    <label>
-                        Finish date:
-                        <input type="date" name="finish" value={this.state.finish} onChange={this.handleInputChange} />
-                    </label>
-                    <textarea placeholder="Describe your experience" name="description" value={this.state.description} onChange={this.handleInputChange} />
-
-                    <button type="submit">Submit</button>
-                </form>
-                <button className="add-button">Add Experience</button>
+                {this.props.experiences.map((experience, i) => {
+                    return <ExperienceInput
+                        key={i}
+                        experience={experience}
+                        onExperienceSubmit={this.props.onExperienceSubmit}
+                        onRemoveExperience={this.props.onRemoveExperience}
+                        index={i}
+                    />
+                })}
+                <button className="add-button" onClick={this.props.onAddExperience}>Add Experience</button>
             </div>
         );
     }

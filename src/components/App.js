@@ -22,9 +22,7 @@ class App extends Component {
       github: '',
       description: '',
       image: null,
-      experience: {},
-      experiences: [],
-
+      experiences: [null]
     }
 
     this.onDragStart = this.onDragStart.bind(this);
@@ -41,6 +39,8 @@ class App extends Component {
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
     this.handleImageUpload = this.handleImageUpload.bind(this);
     this.handleExperienceSubmit = this.handleExperienceSubmit.bind(this);
+    this.handleAddExperience = this.handleAddExperience.bind(this);
+    this.handleRemoveExperience = this.handleRemoveExperience.bind(this);
   }
 
   onDragStart(event) {
@@ -106,10 +106,32 @@ class App extends Component {
     this.setState({image: event.target.files[0]})
   }
 
-  handleExperienceSubmit = data => {
-    this.setState({ experience: data });
-  };
-  
+  handleExperienceSubmit = (data, i) => {
+    console.log(`handle experience submit with key: ` + i);
+    console.log(data);
+
+    const updatedValues = [...this.state.experiences];
+    updatedValues[i] = data;
+    console.log(updatedValues);
+    this.setState({ experiences: updatedValues });
+    
+  }
+
+  handleAddExperience() {
+    console.log("add experience");
+    const updatedValues = [...this.state.experiences]
+    updatedValues.push(null);
+    console.log(updatedValues);
+    this.setState({ experiences: updatedValues });
+  }
+
+  handleRemoveExperience(i) {
+    console.log("remove experience at index: " + i);
+    const updatedValues = [...this.state.experiences];
+    updatedValues.splice(i, 1)
+    console.log(updatedValues);
+    this.setState({ experiences: updatedValues });
+  }
 
   render() {
     return (
@@ -131,7 +153,10 @@ class App extends Component {
             github={this.handleGithubChange}
             description={this.handleDescriptionChange}
             image={this.handleImageUpload}
-            onFormSubmit={this.handleExperienceSubmit}
+            onExperienceSubmit={this.handleExperienceSubmit}
+            onAddExperience={this.handleAddExperience}
+            experiences={this.state.experiences}
+            onRemoveExperience={this.handleRemoveExperience}
             />
           <div className='drag-line'>
             <div className='circle'
@@ -151,7 +176,7 @@ class App extends Component {
             github={this.state.github}
             description={this.state.description}
             image={this.state.image}
-            experiences={this.state.experience}
+            experiences={this.state.experiences}
             />
         </div>
         <Footer />
